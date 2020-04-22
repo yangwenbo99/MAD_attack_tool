@@ -159,7 +159,8 @@ def optimize_eq_constrained(
         sx = img_extra_constrain(sx)
         ssx = correcter(sx)
         if abs(g(ssx) - gdv) > 1.0001 * tol:
-            print('reason A')
+            if DEBUG:
+                print('reason A')
             break
         x = ssx
         x = img_extra_constrain(x)
@@ -194,7 +195,7 @@ def optimize_eq_constrained_adam(
     v = 0
 
     lastfv = 0
-    last = None
+    last = x.clone()
     i = 0
     for i in range(iter):
         x.requires_grad_(True)
@@ -232,13 +233,20 @@ def optimize_eq_constrained_adam(
             break
         x = ssx
         x = img_extra_constrain(x)
-        if i > 0:
-            if torch.any(torch.isnan(x)):
+
+        if torch.any(torch.isnan(x)):
+            if DEBUG:
                 print('Warning: NaN, the last one returned')
-                return last
-            if alpha > 0 and fv - lastfv < 0:
+            return last
+        if torch.any(torch.isnan(ssx)):
+            if DEBUG:
+                print('Warning: NaN, the current one returned')
+            return x
+        if alpha > 0 and fv - lastfv < 0:
+            if DEBUG:
                 print('Warning: learning to worse, last returned ')
-                return last
+            return last
+        if i > 0:
             if alpha < 0 and fv - lastfv > - 0:
                 if DEBUG >= 4:
                     print('reason B')
