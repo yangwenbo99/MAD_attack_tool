@@ -4,7 +4,7 @@ This is a tool for generating examples for MAD subjective testing.  The tool is 
 
 The module `pytorch_ssim` is from <https://github.com/Po-Hsun-Su/pytorch-ssim>
 
-The module `pytorch_msssim` is from <https://github.com/jorge-pessoa/pytorch-msssim>
+The module `pytorch_msssim` is from <https://github.com/VainF/pytorch-msssim>
 
 Example (put LIVE in place): 
 

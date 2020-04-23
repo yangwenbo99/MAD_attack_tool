@@ -166,3 +166,4 @@ tags
 
 .ipynb_checkpoints/
 *.ipynb
+test/

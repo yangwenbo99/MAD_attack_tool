@@ -32,7 +32,8 @@ def get_fun(name : str):
     elif name == 'SSIM':
         return pytorch_ssim.ssim
     elif name == 'MSSSIM':
-        return pytorch_msssim.msssim
+        # return pytorch_msssim.msssim
+        return pytorch_msssim.MS_SSIM(data_range=1.0, nonnegative_ssim=True)
 
 def read_img(filename: str):
     img= Image.open(filename)

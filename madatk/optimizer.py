@@ -130,6 +130,7 @@ def optimize_eq_constrained(
         alphas=SequntialAlphaer((200, 0.001)),
         tol=3e-4, lmd=1,
         eps=1e-5):
+    # Note that lmd has differnet meaning of 'lambda' in the report
     ori_img = x.clone()
     x = x.clone()
     correcter = EqualConstrainCorrecter(g, gdv, lmd, tol)
@@ -187,6 +188,7 @@ def optimize_eq_constrained_adam(
         alpha, beta1=0.9, beta2=0.999, eps_adam=1e-8,
         tol=3e-4, lmd=1,
         eps=1e-5):
+    # Note that lmd has differnet meaning of 'lambda' in the report
     ori_img = x.clone()
     x = x.clone()
     correcter = EqualConstrainCorrecter(g, gdv, lmd, tol)
