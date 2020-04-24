@@ -1,0 +1,6 @@
+[submodule "WaDIQaM"]
+	path = WaDIQaM
+	url = git@github.com:lidq92/WaDIQaM.git
+[submodule "DeepQA-with-Pytorch"]
+	path = deep_qa
+	url = git@github.com:LeonLIU08/DeepQA-with-Pytorch.git
