@@ -1,5 +1,7 @@
 # MAD Attack Tool
 
+**THIS HAS BEEN REPLACED BY <https://github.com/yangwenbo99/torch_niqe>**
+
 This is a tool for generating examples for MAD subjective testing.  The tool is programmed in a course project.  The library is located at `madatk/`
 
 The module `pytorch_ssim` is from <https://github.com/Po-Hsun-Su/pytorch-ssim>
